@@ -1,0 +1,11 @@
+#!/usr/bin/env node
+require("dotenv").config();
+const run = require('..')
+
+run().then(_ => {
+    console.log('DONE! 👏')
+    process.exit(0)
+}).catch(_ => {
+    console.error(`Something went wrong 😱: ${_}`)
+    process.exit(1)
+})

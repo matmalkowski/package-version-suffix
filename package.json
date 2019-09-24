@@ -1,0 +1,17 @@
+{
+  "name": "package-version-suffix",
+  "version": "0.1.0",
+  "main": "index.js",
+  "bin": {
+    "package-version-suffix": "./bin/package-version-suffix"
+  },
+  "repository": "https://github.com/matmalkowski/package-version-suffix.git",
+  "author": "matmalkowski <monkey3310@gmail.com>",
+  "license": "MIT",
+  "private": false,
+  "dependencies": {
+    "@octokit/graphql": "^4.2.0",
+    "dotenv": "^8.1.0",
+    "glob": "^7.1.4"
+  }
+}
