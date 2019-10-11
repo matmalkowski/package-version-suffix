@@ -8,7 +8,7 @@ const { addSuffix } = require('./lib/packageJsonManager')
 
 const run = async () => {
     console.log(`Welcome to package-version-suffix ver. ${selfPkg.version}`)
-    const { buildCounter, branch, slug, service, setEnvVariable } = detectService();
+    const { buildCounter, branch, slug, service, setEnvVariable, setBuildNumber } = detectService();
     const [owner, repo] = slug.split('/')
 
     console.log(`Detected ${service} service with following config:`)
@@ -17,7 +17,10 @@ const run = async () => {
     
     const suffixAndTag = await retrieveSuffixConvention(branchTCName, branchTCNumber, buildCounter, owner, repo)
     if (suffixAndTag.suffix !== '') {
+        setBuildNumber(suffixAndTag.suffix.substr(1))
         await addSuffix(suffixAndTag.suffix);
+    } else {
+        setBuildNumber(`release.${buildCounter}`)
     }
     setEnvVariable('npmTag', suffixAndTag.tag)
 }
