@@ -1,6 +1,6 @@
 {
   "name": "package-version-suffix",
-  "version": "0.2.0",
+  "version": "1.0.0",
   "main": "index.js",
   "bin": {
     "package-version-suffix": "./bin/package-version-suffix"
@@ -11,6 +11,7 @@
   "private": false,
   "dependencies": {
     "@octokit/graphql": "^4.2.0",
+    "commander": "^4.1.1",
     "dotenv": "^8.1.0",
     "glob": "^7.1.4"
   }
